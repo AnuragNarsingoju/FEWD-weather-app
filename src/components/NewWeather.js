@@ -1,9 +1,9 @@
-import {Component} from 'react'
+import React from 'react'
 import Loader from 'react-loader-spinner'
 
 import '../index.css'
 
-class NewWeather extends Component {
+class NewWeather extends React.Component {
   state = {
     search: '',
     name: '',
@@ -188,7 +188,7 @@ class NewWeather extends Component {
         <div className="app-header">
           <div className="app-container">
             <div className="backgroundHome1">
-              <h1 className="app-title">India Weather Dashboard</h1>
+              <h1 className="app-title" style={{color:'black'}}>India Weather Dashboard</h1>
               <div className="search-container">
                 <input
                   type="text"
@@ -243,7 +243,7 @@ class NewWeather extends Component {
                       <div className="weather-card-content">
                         <h2 className="city-name">{dataList.name}</h2>
                         <div className="temperature">
-                          {(dataList.main.temp - 273.15).toFixed(1)}°C
+                          {(dataList.main.temp - 273.15).toFixed(2)}°C
                         </div>
                         <img
                           src={`https://openweathermap.org/img/wn/${dataList.weather[0].icon}@4x.png`}
@@ -263,7 +263,7 @@ class NewWeather extends Component {
                         />
                         <h5>Minimum Temperature</h5>
                         <div className="info-value">
-                          {(dataList.main.temp_min - 273.15).toFixed(1)}°C
+                          {(dataList.main.temp_min - 273.15).toFixed(2)}°C
                         </div>
                       </div>
                       
@@ -274,7 +274,7 @@ class NewWeather extends Component {
                         />
                         <h5>Maximum Temperature</h5>
                         <div className="info-value">
-                          {(dataList.main.temp_max - 273.15).toFixed(1)}°C
+                          {(dataList.main.temp_max - 273.15).toFixed(2)}°C
                         </div>
                       </div>
                       
